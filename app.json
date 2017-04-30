@@ -1,0 +1,6 @@
+{
+  "name": "Galactic Center Stellar Motion API",
+  "description": "A web service to predict stellar motions in the Galactic Center.",
+  "image": "heroku/python",
+  "keywords": ["python", "flask"]
+}

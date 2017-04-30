@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Orbit Tools &mdash; GC Stellar Motion API 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GC Stellar Motion API 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Notes" href="notes.html"/>
+        <link rel="prev" title="API Endpoints" href="endpoints.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> GC Stellar Motion API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="endpoints.html">API Endpoints</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Orbit Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">GC Stellar Motion API</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Orbit Tools</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/orbit_tools.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="orbit-tools">
+<h1>Orbit Tools<a class="headerlink" href="#orbit-tools" title="Permalink to this headline">¶</a></h1>
+<p>These tools are used on the server to provide the API functionality.</p>
+<span class="target" id="module-pyGC.orbit_tools"></span><dl class="class">
+<dt id="pyGC.orbit_tools.Body">
+<em class="property">class </em><code class="descclassname">pyGC.orbit_tools.</code><code class="descname">Body</code><span class="sig-paren">(</span><em>name</em>, <em>primary</em>, <em>mass=0</em>, <em>magnitude=None</em>, <em>spec_type=None</em>, <em>names=[]</em>, <em>orbit=None</em>, <em>promo=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body" title="Permalink to this definition">¶</a></dt>
+<dd><p>A body, typically a star, with an orbit or proper motion measurement.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) &#8211; unique id of the body</li>
+<li><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) &#8211; reference particle</li>
+<li><strong>m=0</strong> (<em>float</em>) &#8211; mass of the body</li>
+<li><strong>magnitude=None</strong> (<em>float</em>) &#8211; brightness magnitude</li>
+<li><strong>spec_type=None</strong> (<em>string</em>) &#8211; stellar spectral type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>orbit</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Orbit" title="pyGC.orbit_tools.Orbit"><em>Orbit</em></a>) &#8211; orbit (if at least a, e, inc, Omega, omega and tp in
+kwargs)</li>
+<li><strong>promo</strong> (<a class="reference internal" href="#pyGC.orbit_tools.ProperMotion" title="pyGC.orbit_tools.ProperMotion"><em>ProperMotion</em></a>) &#8211; proper motion (if at least x0, y0, vx0, vy0 and
+t0 in kwargs)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyGC.orbit_tools.Body.locate">
+<code class="descname">locate</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body.locate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the position and velocity of the body at a specific time,
+based on a a measurement of its orbit or its proper motion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>t</strong> (<em>float</em>) &#8211; time of observation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle">Particle</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>Exception</strong> &#8211; if the body can not be located</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyGC.orbit_tools.Body.mean_motion">
+<code class="descname">mean_motion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body.mean_motion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean motion of the body&#8217;s orbit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>Exception</strong> &#8211; if the star has no measured orbit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyGC.orbit_tools.Body.period">
+<code class="descname">period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the orbital period of the body&#8217;s orbit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>Exception</strong> &#8211; if the star has no measured orbit</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyGC.orbit_tools.Orbit">
+<em class="property">class </em><code class="descclassname">pyGC.orbit_tools.</code><code class="descname">Orbit</code><span class="sig-paren">(</span><em>a</em>, <em>e</em>, <em>inc</em>, <em>Omega</em>, <em>omega</em>, <em>tp</em>, <em>mass=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Orbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Kepler orbit represented by its orbital elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>a</strong> (<em>float</em>) &#8211; semi-major axis</li>
+<li><strong>e</strong> (<em>float</em>) &#8211; eccentricity</li>
+<li><strong>inc</strong> (<em>float</em>) &#8211; inclination</li>
+<li><strong>Omega</strong> (<em>float</em>) &#8211; longitude of ascending node</li>
+<li><strong>omega</strong> (<em>float</em>) &#8211; argument of pericenter</li>
+<li><strong>tp</strong> (<em>float</em>) &#8211; time of pericenter</li>
+<li><strong>m=0</strong> (<em>float</em>) &#8211; mass of the orbiting body</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyGC.orbit_tools.Particle">
+<em class="property">class </em><code class="descclassname">pyGC.orbit_tools.</code><code class="descname">Particle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>vx</em>, <em>vy</em>, <em>vz</em>, <em>mass=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Particle" title="Permalink to this definition">¶</a></dt>
+<dd><p>A particle with a (3D) position and velocity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) &#8211; x-position</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; y-position</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; z-position</li>
+<li><strong>vx</strong> (<em>float</em>) &#8211; x-velocity</li>
+<li><strong>vy</strong> (<em>float</em>) &#8211; y-velocity</li>
+<li><strong>vz</strong> (<em>float</em>) &#8211; z-velocity (&#8220;radial velocity&#8221;)</li>
+<li><strong>m=0</strong> (<em>float</em>) &#8211; mass of the particle</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyGC.orbit_tools.ProperMotion">
+<em class="property">class </em><code class="descclassname">pyGC.orbit_tools.</code><code class="descname">ProperMotion</code><span class="sig-paren">(</span><em>t0</em>, <em>x0</em>, <em>y0</em>, <em>vx0</em>, <em>vy0</em>, <em>ax0=None</em>, <em>ay0=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.ProperMotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>A proper motion up to second order.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>t0</strong> (<em>float</em>) &#8211; reference epoch</li>
+<li><strong>x0</strong> (<em>float</em>) &#8211; x-position at t0</li>
+<li><strong>y0</strong> (<em>float</em>) &#8211; x-position at t0</li>
+<li><strong>vx0</strong> (<em>float</em>) &#8211; x-velocity at t0</li>
+<li><strong>vy0</strong> (<em>float</em>) &#8211; y-velocity at t0</li>
+<li><strong>ax0=None</strong> (<em>float</em>) &#8211; x-acceleration at t0</li>
+<li><strong>ay0=None</strong> (<em>float</em>) &#8211; y-acceleration at t0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.arccos2">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">arccos2</code><span class="sig-paren">(</span><em>x</em>, <em>sign</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.arccos2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns arccos(x) choosing the correct quadrant.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>float</em>) &#8211; input value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.eccentric_anomaly">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">eccentric_anomaly</code><span class="sig-paren">(</span><em>e</em>, <em>M</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.eccentric_anomaly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a mean anomaly into an eccentric anomaly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>e</strong> (<em>float</em>) &#8211; eccentricity</li>
+<li><strong>M</strong> (<em>float</em>) &#8211; mean anomaly</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.mean_motion">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">mean_motion</code><span class="sig-paren">(</span><em>mu</em>, <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.mean_motion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean motion of a Kepler orbit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mu</strong> (<em>float</em>) &#8211; gravitational parameter G*(M+m)</li>
+<li><strong>a</strong> (<em>float</em>) &#8211; semi-major axis</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.mod2pi">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">mod2pi</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.mod2pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap an angle to the range [-pi, pi].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>float</em>) &#8211; input angle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.orbit_to_particle">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">orbit_to_particle</code><span class="sig-paren">(</span><em>orbit</em>, <em>primary</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.orbit_to_particle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the position an velocity of a body from its orbital elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>orbit</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Orbit" title="pyGC.orbit_tools.Orbit"><em>Orbit</em></a>) &#8211; orbit instance to convert</li>
+<li><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) &#8211; reference particle</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle">Particle</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.particle_to_orbit">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">particle_to_orbit</code><span class="sig-paren">(</span><em>particle</em>, <em>primary</em>, <em>t</em>, <em>tol=1e-08</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.particle_to_orbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the orbital elements corresponding to a set of positions
+and velocities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>particle</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) &#8211; particle instance to convert</li>
+<li><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) &#8211; reference particle</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pyGC.orbit_tools.Orbit" title="pyGC.orbit_tools.Orbit">Orbit</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.period">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">period</code><span class="sig-paren">(</span><em>mu</em>, <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the period of a Kepler orbit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mu</strong> (<em>float</em>) &#8211; gravitational parameter G*(M+m)</li>
+<li><strong>a</strong> (<em>float</em>) &#8211; semi-major axis</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.promo_to_particle">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">promo_to_particle</code><span class="sig-paren">(</span><em>promo</em>, <em>primary</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.promo_to_particle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the position and velocity of a body from its proper motion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>promo</strong> (<a class="reference internal" href="#pyGC.orbit_tools.ProperMotion" title="pyGC.orbit_tools.ProperMotion"><em>ProperMotion</em></a>) &#8211; proper motion instance to convert</li>
+<li><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) &#8211; reference particle</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle">Particle</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyGC.orbit_tools.true_anomaly">
+<code class="descclassname">pyGC.orbit_tools.</code><code class="descname">true_anomaly</code><span class="sig-paren">(</span><em>e</em>, <em>M</em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.true_anomaly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a mean anomaly into a true anomaly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>e</strong> (<em>float</em>) &#8211; eccentricity</li>
+<li><strong>M</strong> (<em>float</em>) &#8211; mean anomaly</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="notes.html" class="btn btn-neutral float-right" title="Notes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="endpoints.html" class="btn btn-neutral" title="API Endpoints" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, The MPE Galactic Center Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
