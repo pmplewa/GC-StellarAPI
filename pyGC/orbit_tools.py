@@ -283,10 +283,10 @@ def particle_to_orbit(particle, primary, t, tol=1e-8):
     ny = hx
     n = np.sqrt(nx*nx + ny*ny)
     
-    Omega = arccos2(nx, n, ny)
+    Omega = arccos2(nx/n, ny)
 
     if (e < 1):
-        E = arccos2(1-r/a, e, vr)
+        E = arccos2((1-r/a)/e, vr)
         M = E-e*np.sin(E)
     else:
         E = np.sign(vr)*np.arccosh((1-r/a)/e)
