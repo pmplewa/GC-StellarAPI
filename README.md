@@ -10,24 +10,24 @@ https://s-stars.herokuapp.com
 
 ### Local Install
 
-Please make sure you are running Python version 3:
+Please make sure you are running Python 3:
 ```
 python --version
 ```
-First, download the code:
+1) Download the code:
 ```
 git clone https://github.com/pmplewa/GC-StellarAPI
 cd GC-StellarAPI
 ```
-Second, install any missing required packages:
+2) Install any missing required packages (newer versions might work too):
 ```
 pip install -r requirements.txt
 ```
-Third, start the server:
+3) Start the web server:
 ```
 python server.py
 ```
-Finally, point your web browser to this URL to access the documentation:
+4) Point your web browser to this URL to access the documentation:
 ```
 http://localhost:5000/
 ```
