@@ -315,20 +315,20 @@ def orbit_to_particle(orbit, primary, t):
     :rtype: Particle
     """
 
-    assert orbit.e != 1, "Ca not initialize a radial orbit."
-    assert orbit.e >= 0, "Eccentricity must be greater or equal to zero."
+    assert orbit.e != 1, "Can not initialize a radial orbit (e = 1)."
+    assert orbit.e >= 0, "A valid orbit must have e >= 0."
     if orbit.e > 1:
-        assert orbit.a < 0, "Bound orbit (a > 0) must have e < 1."
+        assert orbit.a < 0, "A bound orbit (a > 0) must have e < 1."
     else:
-        assert orbit.a > 0, "Unbound orbit (a < 0) must have e > 1."
+        assert orbit.a > 0, "An unbound orbit (a < 0) must have e > 1."
 
     mu = G*(orbit.mass+primary.mass)
 
     n = mean_motion(mu, orbit.a)
     M = mod2pi(n*(t-orbit.tp))
     f = true_anomaly(orbit.e, M)
-    assert orbit.e*np.cos(f) > -1, "Unbound orbit can not have f set beyond \
-        the range allowed by the asymptotes set by the parabola."
+    assert orbit.e*np.cos(f) > -1, "An unbound orbit can not have f set beyond \
+        the range allowed by the parabolic asymptotes."
 
     r = orbit.a*(1-orbit.e**2)/(1+orbit.e*np.cos(f))
     v = np.sqrt(mu/orbit.a/(1-orbit.e**2))
