@@ -8,7 +8,7 @@ It is currently hosted at the following URL, including some documentation and ex
 https://s-stars.herokuapp.com
 ```
 
-![](preview.png)
+![](preview.jpg)
 
 ### Local Install
 
