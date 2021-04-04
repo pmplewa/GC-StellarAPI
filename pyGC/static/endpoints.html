@@ -1,52 +1,57 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>API Endpoints &mdash; GC Stellar Motion API 1.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="GC Stellar Motion API 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Orbit Tools" href="orbit_tools.html"/>
-        <link rel="prev" title="Galactic Center Stellar Motion API" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Orbit Tools" href="orbit_tools.html" />
+    <link rel="prev" title="Galactic Center Stellar Motion API" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,11 +82,15 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
             
-                <p class="caption"><span class="caption-text">Documentation</span></p>
+              
+            
+            
+              <p><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Endpoints</a></li>
 <li class="toctree-l1"><a class="reference internal" href="orbit_tools.html">Orbit Tools</a></li>
@@ -91,40 +100,63 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">GC Stellar Motion API</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GC Stellar Motion API</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>API Endpoints</li>
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>API Endpoints</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/endpoints.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/endpoints.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -135,216 +167,171 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
-/* nice headers on first paragraph of info/warning boxes */
-.admonition .first {
-    margin: -12px;
-    padding: 6px 12px;
-    margin-bottom: 12px;
-    color: #fff;
-    line-height: 1;
-    display: block;
-}
-.admonition.warning .first {
-    background: #f0b37e;
-}
-.admonition.note .first {
-    background: #6ab0de;
-}
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
 </style>
-<div class="section" id="api-endpoints">
+<section id="api-endpoints">
 <h1>API Endpoints<a class="headerlink" href="#api-endpoints" title="Permalink to this headline">¶</a></h1>
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-distance-(string-name1)-(string-name2)-(float-t)">
-<code class="descname">GET </code><code class="descname">/api/distance/</code><span class="sig-paren">(</span><em class="property">string: </em><em>name1</em><span class="sig-paren">)</span><code class="descname">/</code><span class="sig-paren">(</span><em class="property">string: </em><em>name2</em><span class="sig-paren">)</span><code class="descname">/</code><span class="sig-paren">(</span><em class="property">float: </em><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-distance-(string-name1)-(string-name2)-(float-t)" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/distance/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">string:</span> </em><em class="sig-param"><span class="pre">name1</span></em><span class="sig-paren">)</span><code class="sig-name descname"><span class="pre">/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">string:</span> </em><em class="sig-param"><span class="pre">name2</span></em><span class="sig-paren">)</span><code class="sig-name descname"><span class="pre">/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">float:</span> </em><em class="sig-param"><span class="pre">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-distance-(string-name1)-(string-name2)-(float-t)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the on-sky separation of a pair of stars at a certain time.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name1</strong> (<em>string</em>) &#8211; name of the first star</li>
-<li><strong>name2</strong> (<em>string</em>) &#8211; name of the second star</li>
-<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name1</strong> (<em>string</em>) – name of the first star</p></li>
+<li><p><strong>name2</strong> (<em>string</em>) – name of the second star</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>distance_onsky</strong> (<em>float</em>) &#8211; on-sky separation of the two stars at t</li>
-<li><strong>vector_onsky</strong> (<em>list</em>) &#8211; on-sky difference vector of the stellar
-positions at t</li>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>distance_onsky</strong> (<em>float</em>) – on-sky separation of the two stars at t</p></li>
+<li><p><strong>vector_onsky</strong> (<em>list</em>) – on-sky difference vector of the stellar
+positions at t</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/distance/IRS16C/S2/2016.0
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/distance/IRS16C/S2/2016.0
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;distance_onsky&quot;</span><span class="p">:</span> <span class="mf">1.1967</span><span class="p">,</span> 
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;distance_onsky&quot;</span><span class="p">:</span> <span class="mf">1.1967</span><span class="p">,</span>
     <span class="nt">&quot;vector_onsky&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5005</span><span class="p">,</span> <span class="mf">1.0870</span><span class="p">]</span>
-<span class="p">}</span>    
+<span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if either star is not found</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">if either star can not be located</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises InvalidUsage</dt>
+<dd class="field-odd"><p>if either star is not found</p>
+</dd>
+<dt class="field-even">Raises InvalidUsage</dt>
+<dd class="field-even"><p>if either star can not be located</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-names-(string-name)">
-<code class="descname">GET </code><code class="descname">/api/names/</code><span class="sig-paren">(</span><em class="property">string: </em><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-names-(string-name)" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/names/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">string:</span> </em><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-names-(string-name)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return alternative names for a particular star.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>string</em>) &#8211; name of the star</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – name of the star</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>string</em>) &#8211; unique id of the star</li>
-<li><strong>names</strong> (<em>list</em>) &#8211; alternative names for the star</li>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>id</strong> (<em>string</em>) – unique id of the star</p></li>
+<li><p><strong>names</strong> (<em>list</em>) – alternative names for the star</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/names/S0-2
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/names/S0-2
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;S2&quot;</span><span class="p">,</span>
     <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;S0-2&quot;</span><span class="p">,</span> <span class="s2">&quot;S2&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if the star is not found</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises InvalidUsage</dt>
+<dd class="field-odd"><p>if the star is not found</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="post">
+<dl class="http post">
 <dt id="post--api-orbit_convert-">
-<code class="descname">POST </code><code class="descname">/api/orbit_convert/</code><a class="headerlink" href="#post--api-orbit_convert-" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">POST</span> </code><code class="sig-name descname"><span class="pre">/api/orbit_convert/</span></code><a class="headerlink" href="#post--api-orbit_convert-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert between orbital elements and positions/velocities.</p>
 <p><strong>Case 1</strong></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Request JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
-<li><strong>a</strong> (<em>float</em>) &#8211; semi-major axis</li>
-<li><strong>e</strong> (<em>float</em>) &#8211; eccentricity</li>
-<li><strong>inc</strong> (<em>float</em>) &#8211; inclination</li>
-<li><strong>Omega</strong> (<em>float</em>) &#8211; longitude of ascending node</li>
-<li><strong>omega</strong> (<em>float</em>) &#8211; argument of pericenter</li>
-<li><strong>tp</strong> (<em>float</em>) &#8211; time of pericenter</li>
+<dl class="field-list simple">
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – semi-major axis</p></li>
+<li><p><strong>e</strong> (<em>float</em>) – eccentricity</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – inclination</p></li>
+<li><p><strong>Omega</strong> (<em>float</em>) – longitude of ascending node</p></li>
+<li><p><strong>omega</strong> (<em>float</em>) – argument of pericenter</p></li>
+<li><p><strong>tp</strong> (<em>float</em>) – time of pericenter</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
-<li><strong>x</strong> (<em>float</em>) &#8211; x-position at t</li>
-<li><strong>y</strong> (<em>float</em>) &#8211; y-position at t</li>
-<li><strong>z</strong> (<em>float</em>) &#8211; z-position at t</li>
-<li><strong>vx0</strong> (<em>float</em>) &#8211; x-velocity at t</li>
-<li><strong>vy0</strong> (<em>float</em>) &#8211; y-velocity at t</li>
-<li><strong>vz0</strong> (<em>float</em>) &#8211; z-velocity at t (&#8220;radial velocity&#8221;)</li>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – x-position at t</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – y-position at t</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – z-position at t</p></li>
+<li><p><strong>vx0</strong> (<em>float</em>) – x-velocity at t</p></li>
+<li><p><strong>vy0</strong> (<em>float</em>) – y-velocity at t</p></li>
+<li><p><strong>vz0</strong> (<em>float</em>) – z-velocity at t (“radial velocity”)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Case 2</strong></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Request JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
-<li><strong>x</strong> (<em>float</em>) &#8211; x-position at t</li>
-<li><strong>y</strong> (<em>float</em>) &#8211; y-position at t</li>
-<li><strong>z</strong> (<em>float</em>) &#8211; z-position at t</li>
-<li><strong>vx0</strong> (<em>float</em>) &#8211; x-velocity at t</li>
-<li><strong>vy0</strong> (<em>float</em>) &#8211; y-velocity at t</li>
-<li><strong>vz0</strong> (<em>float</em>) &#8211; z-velocity at t (&#8220;radial velocity&#8221;)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – x-position at t</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – y-position at t</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – z-position at t</p></li>
+<li><p><strong>vx0</strong> (<em>float</em>) – x-velocity at t</p></li>
+<li><p><strong>vy0</strong> (<em>float</em>) – y-velocity at t</p></li>
+<li><p><strong>vz0</strong> (<em>float</em>) – z-velocity at t (“radial velocity”)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>a</strong> (<em>float</em>) &#8211; semi-major axis</li>
-<li><strong>e</strong> (<em>float</em>) &#8211; eccentricity</li>
-<li><strong>inc</strong> (<em>float</em>) &#8211; inclination</li>
-<li><strong>Omega</strong> (<em>float</em>) &#8211; longitude of ascending node</li>
-<li><strong>omega</strong> (<em>float</em>) &#8211; argument of pericenter</li>
-<li><strong>tp</strong> (<em>float</em>) &#8211; time of pericenter</li>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>a</strong> (<em>float</em>) – semi-major axis</p></li>
+<li><p><strong>e</strong> (<em>float</em>) – eccentricity</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – inclination</p></li>
+<li><p><strong>Omega</strong> (<em>float</em>) – longitude of ascending node</p></li>
+<li><p><strong>omega</strong> (<em>float</em>) – argument of pericenter</p></li>
+<li><p><strong>tp</strong> (<em>float</em>) – time of pericenter</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-parameters-">
-<code class="descname">GET </code><code class="descname">/api/parameters/</code><a class="headerlink" href="#get--api-parameters-" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/parameters/</span></code><a class="headerlink" href="#get--api-parameters-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the values of main parameters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>R0</strong> (<em>float</em>) &#8211; distance to the Galactic Center</li>
-<li><strong>R0_unit</strong> (<em>string</em>) &#8211; unit of R0</li>
-<li><strong>M0</strong> (<em>float</em>) &#8211; mass of the central black hole</li>
-<li><strong>M0_unit</strong> (<em>string</em>) &#8211; unit of M0</li>
+<dl class="field-list simple">
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R0</strong> (<em>float</em>) – distance to the Galactic Center</p></li>
+<li><p><strong>R0_unit</strong> (<em>string</em>) – unit of R0</p></li>
+<li><p><strong>M0</strong> (<em>float</em>) – mass of the central black hole</p></li>
+<li><p><strong>M0_unit</strong> (<em>string</em>) – unit of M0</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+</dd>
+</dl>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;R0&quot;</span><span class="p">:</span> <span class="mf">8340.0</span><span class="p">,</span>
     <span class="nt">&quot;R0_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;pc&quot;</span><span class="p">,</span>
     <span class="nt">&quot;M0&quot;</span><span class="p">:</span> <span class="mf">4400000.0</span><span class="p">,</span>
@@ -354,115 +341,92 @@ positions at t</li>
 </div>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-period-(string-name)">
-<code class="descname">GET </code><code class="descname">/api/period/</code><span class="sig-paren">(</span><em class="property">string: </em><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-period-(string-name)" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/period/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">string:</span> </em><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-period-(string-name)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the orbital period of a particular star.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>string</em>) &#8211; name of the star</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – name of the star</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>string</em>) &#8211; unique id of the star</li>
-<li><strong>period</strong> (<em>float</em>) &#8211; orbital period of the star</li>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>id</strong> (<em>string</em>) – unique id of the star</p></li>
+<li><p><strong>period</strong> (<em>float</em>) – orbital period of the star</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/period/S2
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/period/S2
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;S2&quot;</span><span class="p">,</span>
     <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mf">15.78</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if the star is not found</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">if the star has no measured orbit</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises InvalidUsage</dt>
+<dd class="field-odd"><p>if the star is not found</p>
+</dd>
+<dt class="field-even">Raises InvalidUsage</dt>
+<dd class="field-even"><p>if the star has no measured orbit</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-stars-">
-<code class="descname">GET </code><code class="descname">/api/stars/</code><a class="headerlink" href="#get--api-stars-" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/stars/</span></code><a class="headerlink" href="#get--api-stars-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of stars for which information is available. If a star
 has multiple names, it will appear multiple times in this list.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>names</strong> (<em>list</em>) &#8211; all star names that are recognized</li>
+<dl class="field-list simple">
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>names</strong> (<em>list</em>) – all star names that are recognized</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;S9&quot;</span><span class="p">,</span> <span class="s2">&quot;S8&quot;</span><span class="p">,</span> <span class="s2">&quot;S0-18&quot;</span><span class="p">,</span> <span class="s2">&quot;S0-19&quot;</span><span class="p">,</span> <span class="s2">&quot;S0-14&quot;</span><span class="p">,</span> <span class="s2">&quot;S2&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span> <span class="p">]}</span>
+</dd>
+</dl>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;S9&quot;</span><span class="p">,</span> <span class="s2">&quot;S8&quot;</span><span class="p">,</span> <span class="s2">&quot;S0-18&quot;</span><span class="p">,</span> <span class="s2">&quot;S0-19&quot;</span><span class="p">,</span> <span class="s2">&quot;S0-14&quot;</span><span class="p">,</span> <span class="s2">&quot;S2&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span> <span class="p">]}</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-stars-(string-name)-">
-<code class="descname">GET </code><code class="descname">/api/stars/</code><span class="sig-paren">(</span><em class="property">string: </em><em>name</em><span class="sig-paren">)</span><code class="descname">/</code><a class="headerlink" href="#get--api-stars-(string-name)-" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/stars/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">string:</span> </em><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><code class="sig-name descname"><span class="pre">/</span></code><a class="headerlink" href="#get--api-stars-(string-name)-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the orbital elements or the proper motion parameters of a
 particular star.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>string</em>) &#8211; name of the star</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – name of the star</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Case 1</strong></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>string</em>) &#8211; unique id of the star</li>
-<li><strong>data_type</strong> (<em>string</em>) &#8211; &#8220;orbit&#8221;</li>
-<li><strong>a</strong> (<em>float</em>) &#8211; semi-major axis</li>
-<li><strong>e</strong> (<em>float</em>) &#8211; eccentricity</li>
-<li><strong>inc</strong> (<em>float</em>) &#8211; inclination</li>
-<li><strong>Omega</strong> (<em>float</em>) &#8211; longitude of ascending node</li>
-<li><strong>omega</strong> (<em>float</em>) &#8211; argument of pericenter</li>
-<li><strong>tp</strong> (<em>float</em>) &#8211; time of pericenter</li>
+<dl class="field-list simple">
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>string</em>) – unique id of the star</p></li>
+<li><p><strong>data_type</strong> (<em>string</em>) – “orbit”</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – semi-major axis</p></li>
+<li><p><strong>e</strong> (<em>float</em>) – eccentricity</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – inclination</p></li>
+<li><p><strong>Omega</strong> (<em>float</em>) – longitude of ascending node</p></li>
+<li><p><strong>omega</strong> (<em>float</em>) – argument of pericenter</p></li>
+<li><p><strong>tp</strong> (<em>float</em>) – time of pericenter</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/stars/S2
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/stars/S2
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;S2&quot;</span><span class="p">,</span>
     <span class="nt">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;orbit&quot;</span><span class="p">,</span>
     <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">0.123</span><span class="p">,</span>
@@ -475,31 +439,26 @@ particular star.</p>
 </pre></div>
 </div>
 <p><strong>Case 2</strong></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>string</em>) &#8211; unique id of the star</li>
-<li><strong>data_type</strong> (<em>string</em>) &#8211; &#8220;proper motion&#8221;</li>
-<li><strong>t0</strong> (<em>float</em>) &#8211; reference epoch</li>
-<li><strong>x0</strong> (<em>float</em>) &#8211; x-position at t0</li>
-<li><strong>y0</strong> (<em>float</em>) &#8211; y-position at t0</li>
-<li><strong>vx0</strong> (<em>float</em>) &#8211; x-velocity at t0</li>
-<li><strong>vy0</strong> (<em>float</em>) &#8211; y-velocity at t0</li>
-<li><strong>ax0</strong> (<em>float</em>) &#8211; x-acceleration at t0</li>
-<li><strong>ay0</strong> (<em>float</em>) &#8211; y-acceleration at t0</li>
+<dl class="field-list simple">
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>string</em>) – unique id of the star</p></li>
+<li><p><strong>data_type</strong> (<em>string</em>) – “proper motion”</p></li>
+<li><p><strong>t0</strong> (<em>float</em>) – reference epoch</p></li>
+<li><p><strong>x0</strong> (<em>float</em>) – x-position at t0</p></li>
+<li><p><strong>y0</strong> (<em>float</em>) – y-position at t0</p></li>
+<li><p><strong>vx0</strong> (<em>float</em>) – x-velocity at t0</p></li>
+<li><p><strong>vy0</strong> (<em>float</em>) – y-velocity at t0</p></li>
+<li><p><strong>ax0</strong> (<em>float</em>) – x-acceleration at t0</p></li>
+<li><p><strong>ay0</strong> (<em>float</em>) – y-acceleration at t0</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/stars/S7
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/stars/S7
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;S7&quot;</span><span class="p">,</span>
     <span class="nt">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;proper_motion&quot;</span><span class="p">,</span>
     <span class="nt">&quot;t0&quot;</span><span class="p">:</span> <span class="mf">2000.41</span><span class="p">,</span>
@@ -512,51 +471,42 @@ particular star.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if the star is not found</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises InvalidUsage</dt>
+<dd class="field-odd"><p>if the star is not found</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-stars-(string-name)-(float-t)">
-<code class="descname">GET </code><code class="descname">/api/stars/</code><span class="sig-paren">(</span><em class="property">string: </em><em>name</em><span class="sig-paren">)</span><code class="descname">/</code><span class="sig-paren">(</span><em class="property">float: </em><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-stars-(string-name)-(float-t)" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/stars/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">string:</span> </em><em class="sig-param"><span class="pre">name</span></em><span class="sig-paren">)</span><code class="sig-name descname"><span class="pre">/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">float:</span> </em><em class="sig-param"><span class="pre">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-stars-(string-name)-(float-t)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the location of a particular star at a certain time.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>string</em>) &#8211; name of the star</li>
-<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – name of the star</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>id</strong> (<em>string</em>) &#8211; unique id of the star</li>
-<li><strong>t</strong> (<em>float</em>) &#8211; time of observation</li>
-<li><strong>x</strong> (<em>float</em>) &#8211; x-position at t</li>
-<li><strong>y</strong> (<em>float</em>) &#8211; y-position at t</li>
-<li><strong>z</strong> (<em>float</em>) &#8211; z-position at t</li>
-<li><strong>vx0</strong> (<em>float</em>) &#8211; x-velocity at t</li>
-<li><strong>vy0</strong> (<em>float</em>) &#8211; y-velocity at t</li>
-<li><strong>vz0</strong> (<em>float</em>) &#8211; z-velocity at t (&#8220;radial velocity&#8221;)</li>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>id</strong> (<em>string</em>) – unique id of the star</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – x-position at t</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – y-position at t</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – z-position at t</p></li>
+<li><p><strong>vx0</strong> (<em>float</em>) – x-velocity at t</p></li>
+<li><p><strong>vy0</strong> (<em>float</em>) – y-velocity at t</p></li>
+<li><p><strong>vz0</strong> (<em>float</em>) – z-velocity at t (“radial velocity”)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/stars/S2/2016.0
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/stars/S2/2016.0
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;S2&quot;</span><span class="p">,</span>
     <span class="nt">&quot;t&quot;</span><span class="p">:</span> <span class="mf">2016.0</span><span class="p">,</span>
     <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.0722</span><span class="p">,</span>
@@ -568,118 +518,105 @@ particular star.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if the star is not found</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">if the star can not be located</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises InvalidUsage</dt>
+<dd class="field-odd"><p>if the star is not found</p>
+</dd>
+<dt class="field-even">Raises InvalidUsage</dt>
+<dd class="field-even"><p>if the star can not be located</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="get">
+<dl class="http get">
 <dt id="get--api-unit_convert-(float-value)">
-<code class="descname">GET </code><code class="descname">/api/unit_convert/</code><span class="sig-paren">(</span><em class="property">float: </em><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-unit_convert-(float-value)" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">GET</span> </code><code class="sig-name descname"><span class="pre">/api/unit_convert/</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">float:</span> </em><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--api-unit_convert-(float-value)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert between different quantities.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>value</strong> (<em>float</em>) &#8211; value to convert</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>float</em>) – value to convert</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
-<li><strong>from</strong> (<em>string</em>) &#8211; unit of value</li>
-<li><strong>to</strong> (<em>string</em>) &#8211; target unit</li>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>from</strong> (<em>string</em>) – unit of value</p></li>
+<li><p><strong>to</strong> (<em>string</em>) – target unit</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Response JSON Object:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
-<li><strong>result</strong> (<em>float</em>) &#8211; value in target unit</li>
-<li><strong>result_unit</strong> (<em>string</em>) &#8211; unit of result</li>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> (<em>float</em>) – value in target unit</p></li>
+<li><p><strong>result_unit</strong> (<em>string</em>) – unit of result</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><em>Supported source units:</em></p>
 <blockquote>
 <div><ul class="simple">
-<li>arcsec - arc second</li>
-<li>arcsec/yr - arc second per year</li>
+<li><p>arcsec - arc second</p></li>
+<li><p>arcsec/yr - arc second per year</p></li>
 </ul>
 </div></blockquote>
 <p><em>Supported target units:</em></p>
 <blockquote>
 <div><ul class="simple">
-<li>rad - radian</li>
-<li>deg - degree</li>
-<li>au - astronomical unit</li>
-<li>lyr - light year</li>
-<li>rg - Schwarzschild radius of the central black hole</li>
-<li>km/s - kilometer per second</li>
+<li><p>rad - radian</p></li>
+<li><p>deg - degree</p></li>
+<li><p>au - astronomical unit</p></li>
+<li><p>lyr - light year</p></li>
+<li><p>rg - Schwarzschild radius of the central black hole</p></li>
+<li><p>km/s - kilometer per second</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>/api/unit_convert/1.0?from=arcsec&amp;to=pc
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>/api/unit_convert/1.0?from=arcsec&amp;to=pc
 </pre></div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="mf">0.04028801690020244</span><span class="p">,</span> 
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="mf">0.04028801690020244</span><span class="p">,</span>
   <span class="nt">&quot;result_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;pc&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises InvalidUsage:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if the conversion fails due to unsupported or
-incompatible units</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Raises InvalidUsage</dt>
+<dd class="field-odd"><p>if the conversion fails due to unsupported or
+incompatible units</p>
+</dd>
+</dl>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="orbit_tools.html" class="btn btn-neutral float-right" title="Orbit Tools" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="Galactic Center Stellar Motion API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="orbit_tools.html" class="btn btn-neutral float-right" title="Orbit Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Galactic Center Stellar Motion API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, The MPE Galactic Center Team.
+        &#169; Copyright 2016, The MPE Galactic Center Team.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -688,37 +625,15 @@ incompatible units</td>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

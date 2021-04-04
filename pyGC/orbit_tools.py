@@ -9,13 +9,13 @@ R0_unit = units.pc
 M0 = 4.31e6 # mass of the central black hole
 M0_unit = units.solMass
 
-m_unit = M0*M0_unit # mass unit
+m_unit = M0 * M0_unit # mass unit
 a_unit = units.arcsec # angle unit
 t_unit = units.yr # time unit
 
-l_unit = a_unit.to(units.rad)*(R0*R0_unit) # length unit
+l_unit = a_unit.to(units.rad) * (R0 * R0_unit) # length unit
 
-G = float(constants.G.cgs * m_unit*t_unit**2/l_unit**3)
+G = float(constants.G.cgs * m_unit * t_unit**2 / l_unit**3)
 
 
 class Particle():
@@ -29,7 +29,6 @@ class Particle():
     :param float vz: z-velocity ("radial velocity")
     :param float m=0: mass of the particle
     """
-
     def __init__(self, x, y, z, vx, vy, vz, mass=0):
         self.x = x
         self.y = y
@@ -50,7 +49,6 @@ class Orbit():
     :param float tp: time of pericenter
     :param float m=0: mass of the orbiting body
     """
-
     def __init__(self, a, e, inc, Omega, omega, tp, mass=0):
         self.a = a
         self.e = e
@@ -71,7 +69,6 @@ class ProperMotion():
     :param float ax0=None: x-acceleration at t0
     :param float ay0=None: y-acceleration at t0
     """
-
     def __init__(self, t0, x0, y0, vx0, vy0, ax0=None, ay0=None):
         self.t0 = t0
         self.x0 = x0
@@ -95,7 +92,6 @@ class Body():
     :var ProperMotion promo: proper motion (if at least x0, y0, vx0, vy0 and
         t0 in kwargs)
     """
-
     def __init__(self, name, primary, mass=0, magnitude=None, spec_type=None,
                  names=[], orbit=None, promo=None, **kwargs):
         self.id = name
@@ -110,7 +106,7 @@ class Body():
             self.promo = ProperMotion(**promo)
 
     def __repr__(self):
-      return "<{0} {1}>".format(self.__class__.__name__, self.id)
+      return f"<{self.__class__.__name__} {self.id}>"
 
     def mean_motion(self):
         """Return the mean motion of the body's orbit.
@@ -118,12 +114,11 @@ class Body():
         :rtype: float
         :raises Exception: if the star has no measured orbit
         """
-
         if self.orbit is not None:
-            mu = G*(self.mass+self.primary.mass)
+            mu = G * (self.mass + self.primary.mass)
             return mean_motion(mu, self.orbit.a)
         else:
-            raise Exception("Body {0} has no measured orbit.".format(self.id))
+            raise Exception(f"Body {self.id} has no measured orbit.")
 
     def period(self):
         """Return the orbital period of the body's orbit.
@@ -131,12 +126,11 @@ class Body():
         :rtype: float
         :raises Exception: if the star has no measured orbit
         """
-
         if self.orbit is not None:
-            mu = G*(self.mass+self.primary.mass)
+            mu = G * (self.mass + self.primary.mass)
             return period(mu, self.orbit.a)
         else:
-            raise Exception("Body {0} has no measured orbit.".format(self.id))
+            raise Exception(f"Body {self.id} has no measured orbit.")
 
     def locate(self, t):
         """Return the position and velocity of the body at a specific time,
@@ -147,13 +141,12 @@ class Body():
         :rtype: Particle
         :raises Exception: if the body can not be located
         """
-
         if self.orbit is not None:
             return orbit_to_particle(self.orbit, self.primary, t)
         elif self.promo is not None:
             return promo_to_particle(self.promo, self.primary, t)
         else:
-            raise Exception("Body {0} can not be located.".format(self.id))
+            raise Exception(f"Body {self.id} can not be located.")
 
 def mod2pi(x):
     """Wrap an angle to the range [-pi, pi].
@@ -162,8 +155,7 @@ def mod2pi(x):
 
     :rtype: float
     """
-
-    return (x+np.pi)%(2*np.pi)-np.pi
+    return (x + np.pi) % (2 * np.pi) - np.pi
 
 def arccos2(x, sign):
     """Returns arccos(x) choosing the correct quadrant.
@@ -172,8 +164,7 @@ def arccos2(x, sign):
 
     :rtype: float
     """
-
-    return np.arccos(x) if (sign >= 0) else 2*np.pi-np.arccos(x)
+    return np.arccos(x) if (sign >= 0) else 2 * np.pi - np.arccos(x)
 
 def mean_motion(mu, a):
     """Return the mean motion of a Kepler orbit.
@@ -183,18 +174,16 @@ def mean_motion(mu, a):
 
     :rtype: float
     """
-
-    return np.sign(a)*np.sqrt(np.fabs(mu/a**3))
+    return np.sign(a) * np.sqrt(np.fabs(mu / a**3))
 
 def period(mu, a):
     """Return the period of a Kepler orbit.
-    
+
     :param float mu: gravitational parameter G*(M+m)
     :param float a: semi-major axis
 
     :rtype: float
     """
-
     n = mean_motion(mu, a)
     return 2*np.pi/n
 
@@ -206,18 +195,16 @@ def eccentric_anomaly(e, M, *args, **kwargs):
 
     :rtype: float
     """
-
     if e < 1:
-        f = lambda E: E-e*np.sin(E)-M
-        fp = lambda E: 1-e*np.cos(E)
-        E0 = M if e < 0.8 else np.sign(M)*np.pi
+        f = lambda E: E - e * np.sin(E) - M
+        fp = lambda E: 1 - e * np.cos(E)
+        E0 = M if e < 0.8 else np.sign(M) * np.pi
         E = mod2pi(newton(f, E0, fp, *args, **kwargs))
     else:
-        f = lambda E: E-e*np.sinh(E)-M
-        fp = lambda E: 1-e*np.cosh(E)
-        E0 = np.sign(M)*np.log(2*np.fabs(M)/e+1.8)
+        f = lambda E: E - e * np.sinh(E)-M
+        fp = lambda E: 1 - e * np.cosh(E)
+        E0 = np.sign(M) * np.log(2 * np.fabs(M) / e + 1.8)
         E = newton(f, E0, fp, *args, **kwargs)
-
     return E
 
 def true_anomaly(e, M):
@@ -228,12 +215,11 @@ def true_anomaly(e, M):
 
     :rtype: float
     """
-
     E = eccentric_anomaly(e, M)
     if e > 1:
-        return 2*np.arctan(np.sqrt((1+e)/(e-1))*np.tanh(E/2))
+        return 2 * np.arctan(np.sqrt((1 + e) / (e - 1)) * np.tanh(E/2))
     else:
-        return 2*np.arctan(np.sqrt((1+e)/(1-e))*np.tan(E/2))
+        return 2 * np.arctan(np.sqrt((1 + e) / (1 - e)) * np.tan(E / 2))
 
 def particle_to_orbit(particle, primary, t, tol=1e-8):
     """Find the orbital elements corresponding to a set of positions
@@ -245,63 +231,62 @@ def particle_to_orbit(particle, primary, t, tol=1e-8):
 
     :rtype: Orbit
     """
-
     assert primary.mass > 0, "Primary particle has no mass."
 
-    mu = G*(particle.mass+primary.mass)
+    mu = G * (particle.mass + primary.mass)
 
-    dx = particle.x-primary.x
-    dy = particle.y-primary.y
-    dz = particle.z-primary.z
-    dvx = particle.vx-primary.vx
-    dvy = particle.vy-primary.vy
-    dvz = particle.vz-primary.vz
-    r = np.sqrt(dx*dx + dy*dy + dz*dz)
+    dx = particle.x - primary.x
+    dy = particle.y - primary.y
+    dz = particle.z - primary.z
+    dvx = particle.vx - primary.vx
+    dvy = particle.vy - primary.vy
+    dvz = particle.vz - primary.vz
+    r = np.sqrt(dx**2 + dy**2 + dz**2)
     assert r > 0, "Particle is on top of primary particle."
 
-    v2 = dvx*dvx + dvy*dvy + dvz*dvz
-    vc2 = mu/r  
-    a = -mu/(v2-2*vc2)
+    v2 = dvx**2 + dvy**2 + dvz**2
+    vc2 = mu / r
+    a = -mu / (v2 - 2 * vc2)
 
-    hx = (dy*dvz - dz*dvy)
-    hy = (dz*dvx - dx*dvz)
-    hz = (dx*dvy - dy*dvx)
-    h = np.sqrt(hx*hx + hy*hy + hz*hz)
-    
-    dv2 = v2-vc2
-    vr = (dx*dvx + dy*dvy + dz*dvz)/r    
+    hx = (dy * dvz - dz * dvy)
+    hy = (dz * dvx - dx * dvz)
+    hz = (dx * dvy - dy * dvx)
+    h = np.sqrt(hx**2 + hy**2 + hz**2)
+
+    dv2 = v2 - vc2
+    vr = (dx * dvx + dy * dvy + dz * dvz) / r
     rvr = r*vr
-    
-    ex = (dv2*dx - rvr*dvx)/mu
-    ey = (dv2*dy - rvr*dvy)/mu
-    ez = (dv2*dz - rvr*dvz)/mu
-    e = np.sqrt(ex*ex + ey*ey + ez*ez)
 
-    inc = np.arccos(hz/h)
+    ex = (dv2 * dx - rvr * dvx) / mu
+    ey = (dv2 * dy - rvr * dvy) / mu
+    ez = (dv2 * dz - rvr * dvz) / mu
+    e = np.sqrt(ex**2 + ey**2 + ez**2)
+
+    inc = np.arccos(hz / h)
 
     nx = -hy
     ny = hx
-    n = np.sqrt(nx*nx + ny*ny)
-    
-    Omega = arccos2(nx/n, ny)
+    n = np.sqrt(nx**2 + ny**2)
+
+    Omega = arccos2(nx / n, ny)
 
     if (e < 1):
-        E = arccos2((1-r/a)/e, vr)
-        M = E-e*np.sin(E)
+        E = arccos2((1 - r / a) / e, vr)
+        M = E - e * np.sin(E)
     else:
-        E = np.sign(vr)*np.arccosh((1-r/a)/e)
-        M = e*np.sinh(E)-E
+        E = np.sign(vr) * np.arccosh((1 - r / a) / e)
+        M = e * np.sinh(E) - E
 
-    tp = t-M/np.fabs(mean_motion(mu, a))
+    tp = t - M / np.fabs(mean_motion(mu, a))
 
     if (inc < tol) or (inc > np.pi-tol):
         pomega = arccos2(ex/e, ey)
-        if (inc < np.pi/2):
+        if (inc < np.pi / 2):
             omega = pomega-Omega
         else:
-            omega = Omega-pomega
+            omega = Omega - pomega
     else:
-        omega = arccos2((nx*ex + ny*ey)/(n*e), ez)
+        omega = arccos2((nx * ex + ny * ey) / (n * e), ez)
 
     return Orbit(a, e, inc, Omega, omega, tp, particle.mass)
 
@@ -314,7 +299,6 @@ def orbit_to_particle(orbit, primary, t):
 
     :rtype: Particle
     """
-
     assert orbit.e != 1, "Can not initialize a radial orbit (e = 1)."
     assert orbit.e >= 0, "A valid orbit must have e >= 0."
     if orbit.e > 1:
@@ -322,16 +306,16 @@ def orbit_to_particle(orbit, primary, t):
     else:
         assert orbit.a > 0, "An unbound orbit (a < 0) must have e > 1."
 
-    mu = G*(orbit.mass+primary.mass)
+    mu = G * (orbit.mass + primary.mass)
 
     n = mean_motion(mu, orbit.a)
-    M = mod2pi(n*(t-orbit.tp))
+    M = mod2pi(n * (t - orbit.tp))
     f = true_anomaly(orbit.e, M)
-    assert orbit.e*np.cos(f) > -1, "An unbound orbit can not have f set beyond \
+    assert orbit.e * np.cos(f) > -1, "An unbound orbit can not have f set beyond \
         the range allowed by the parabolic asymptotes."
 
-    r = orbit.a*(1-orbit.e**2)/(1+orbit.e*np.cos(f))
-    v = np.sqrt(mu/orbit.a/(1-orbit.e**2))
+    r = orbit.a * (1 - orbit.e**2) / (1 + orbit.e * np.cos(f))
+    v = np.sqrt(mu / orbit.a / (1 - orbit.e**2))
 
     cO = np.cos(orbit.Omega)
     sO = np.sin(orbit.Omega)
@@ -342,13 +326,13 @@ def orbit_to_particle(orbit, primary, t):
     ci = np.cos(orbit.inc)
     si = np.sin(orbit.inc)
 
-    x = primary.x+r*(cO*(co*cf-so*sf)-sO*(so*cf+co*sf)*ci)
-    y = primary.y+r*(sO*(co*cf-so*sf)+cO*(so*cf+co*sf)*ci)
-    z = primary.z+r*(so*cf+co*sf)*si
+    x = primary.x + r * (cO*(co*cf-so*sf) - sO*(so*cf+co*sf)*ci)
+    y = primary.y + r * (sO*(co*cf-so*sf) + cO*(so*cf+co*sf)*ci)
+    z = primary.z + r * (so*cf + co*sf)*si
 
-    vx = primary.vx+v*((orbit.e+cf)*(-ci*co*sO-cO*so)-sf*(co*cO-ci*so*sO))
-    vy = primary.vy+v*((orbit.e+cf)*(ci*co*cO-sO*so)-sf*(co*sO+ci*so*cO))
-    vz = primary.vz+v*((orbit.e+cf)*co*si-sf*si*so)
+    vx = primary.vx + v * ((orbit.e+cf)*(-ci*co*sO-cO*so) - sf*(co*cO-ci*so*sO))
+    vy = primary.vy + v * ((orbit.e+cf)*(ci*co*cO-sO*so) - sf*(co*sO+ci*so*cO))
+    vz = primary.vz + v * ((orbit.e+cf)*co*si - sf*si*so)
 
     return Particle(x, y, z, vx, vy, vz, orbit.mass)
 
@@ -361,18 +345,17 @@ def promo_to_particle(promo, primary, t):
 
     :rtype: Particle
     """
+    vx = primary.vx + promo.vx0
+    vy = primary.vy + promo.vy0
 
-    vx = primary.vx+promo.vx0
-    vy = primary.vy+promo.vy0
-    
-    x = primary.x+promo.x0+vx*(t-promo.t0)
-    y = primary.y+promo.y0+vy*(t-promo.t0)
-    
+    x = primary.x + promo.x0 + vx * (t - promo.t0)
+    y = primary.y + promo.y0 + vy * (t - promo.t0)
+
     if promo.ax0:
-        x += promo.ax0/2*(t-promo.t0)**2
-        vx += promo.ax0*(t-promo.t0)
+        x += promo.ax0 / 2 * (t - promo.t0)**2
+        vx += promo.ax0 * (t - promo.t0)
     if promo.ay0:
-        y += promo.ay0/2*(t-promo.t0)**2
-        vy += promo.ax0*(t-promo.t0)
-        
+        y += promo.ay0 / 2 * (t - promo.t0)**2
+        vy += promo.ax0 * (t - promo.t0)
+
     return Particle(x, y, None, vx, vy, None)

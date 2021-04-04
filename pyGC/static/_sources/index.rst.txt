@@ -30,12 +30,12 @@ What are the orbital elements?
 .. nbinput:: ipython3
     :execution-count: 2
 
-    url = "https://s-stars.herokuapp.com/api"
+    url = "http://localhost:5000/api"
 
 .. nbinput:: ipython3
     :execution-count: 3
 
-    r = requests.get("{0}/stars/{1}".format(url, "S2"))
+    r = requests.get(f"{url}/stars/S2")
 
 .. nbinput:: ipython3
     :execution-count: 4
@@ -67,14 +67,7 @@ What are the orbital elements?
 
 .. nboutput::
 
-    {'Omega': 3.9338,
-     'a': 0.123,
-     'data_type': 'orbit',
-     'e': 0.88,
-     'id': 'S2',
-     'inc': 2.36056,
-     'omega': 1.10933,
-     'tp': 2002.32}
+    {'Omega': 3.9338, 'a': 0.123, 'data_type': 'orbit', 'e': 0.88, 'id': 'S2', 'inc': 2.36056, 'omega': 1.10933, 'tp': 2002.32}
 
 
 What is the orbital period?
@@ -83,7 +76,7 @@ What is the orbital period?
 .. nbinput:: ipython3
     :execution-count: 8
 
-    r = requests.get("{0}/period/{1}".format(url, "S2"))
+    r = requests.get(f"{url}/period/S2")
 
 .. nbinput:: ipython3
     :execution-count: 9
@@ -109,7 +102,7 @@ How does the orbit appear on-sky?
 
     import numpy as np
     import pandas as pd
-    
+
     %matplotlib inline
     import matplotlib
     matplotlib.style.use('ggplot')
@@ -117,15 +110,14 @@ How does the orbit appear on-sky?
 .. nbinput:: ipython3
     :execution-count: 12
 
-    t_min = orbit["tp"]-period/2
-    t_max = orbit["tp"]+period/2
+    t_min = orbit["tp"] - period / 2
+    t_max = orbit["tp"] + period / 2
     t_val = np.linspace(t_min, t_max, 42)
 
 .. nbinput:: ipython3
     :execution-count: 13
 
-    data = pd.DataFrame([requests.get(
-        "{0}/stars/{1}/{2:f}".format(url, "S2", t)).json() for t in t_val])
+    data = pd.DataFrame([requests.get(f"{url}/stars/S2/{t}").json() for t in t_val])
 
 .. nbinput:: ipython3
     :execution-count: 14
@@ -147,7 +139,7 @@ How does the orbit appear on-sky?
 
     ax = data.plot(kind="scatter", x="y", y="x")
     ax.invert_xaxis()
-    ax.set_aspect("equal")    
+    ax.set_aspect("equal")
     ax.set_xticks(np.arange(-0.1, 0.105, 0.05))
     ax.set_yticks(np.arange(-0.05, 0.205, 0.05))
     ax.set_xlabel(r"$\Delta\alpha\cos\delta$ (arcsec)")
@@ -168,7 +160,7 @@ What about radial velocity?
 
     def convert_velocity(value):
         params = {"from": "arcsec/yr", "to": "km/s"}
-        r = requests.get("{0}/unit_convert/{1:f}".format(url, value), params=params)
+        r = requests.get(f"{url}/unit_convert/{value}", params=params)
         data = r.json()
         return data["result"]
 
@@ -197,7 +189,7 @@ What are other names for S2?
 .. nbinput:: ipython3
     :execution-count: 19
 
-    r = requests.get("{0}/names/{1}".format(url, "S2"))
+    r = requests.get(f"{url}/names/S2")
 
 .. nbinput:: ipython3
     :execution-count: 20
@@ -207,8 +199,3 @@ What are other names for S2?
 .. nboutput::
 
     {'id': 'S2', 'names': ['S0-2', 'S2']}
-
-    
-**Version History**
-
-* 2016-07-10 Initial version

@@ -1,16 +1,16 @@
+import numpy as np
 import os
 
 from astropy import units, constants
 from astropy.units import Unit
 from flask import jsonify, request, render_template, send_from_directory
-import numpy as np
 from werkzeug.exceptions import HTTPException
 from werkzeug.routing import NumberConverter
 
 from . import app
 from .data import stars, black_hole
-from .orbit_tools import R0, M0, R0_unit, M0_unit, G, Orbit, Particle, \
-  orbit_to_particle, particle_to_orbit
+from .orbit_tools import (R0, M0, R0_unit, M0_unit, G, Orbit, Particle,
+    orbit_to_particle, particle_to_orbit)
 
 
 class InvalidUsage(HTTPException):
@@ -52,12 +52,7 @@ def get_parameters():
             "M0_unit": "solMass"
         }
     """
-    return jsonify({
-        "R0": R0,
-        "R0_unit": R0_unit.name,
-        "M0": M0,
-        "M0_unit": M0_unit.name
-        })
+    return jsonify({"R0": R0, "R0_unit": R0_unit.name, "M0": M0, "M0_unit": M0_unit.name})
 
 @app.route("/api/stars/")
 def get_stars():
@@ -67,7 +62,7 @@ def get_stars():
     :>json list names: all star names that are recognized
 
     .. sourcecode:: json
-        
+
         {"names": ["S9", "S8", "S0-18", "S0-19", "S0-14", "S2", "..." ]}
     """
     return jsonify({"names": list(stars.keys())})
@@ -88,7 +83,7 @@ def get_star(name):
     :>json float inc: inclination
     :>json float Omega: longitude of ascending node
     :>json float omega: argument of pericenter
-    :>json float tp: time of pericenter    
+    :>json float tp: time of pericenter
 
     **Example**
 
@@ -149,7 +144,8 @@ def get_star(name):
         raise InvalidUsage("A star with this name was not found.")
     if star.orbit is not None:
         orbit = star.orbit
-        return jsonify({
+        return jsonify(
+        {
             "id": star.id,
             "data_type": "orbit",
             "a": orbit.a,
@@ -158,10 +154,11 @@ def get_star(name):
             "Omega": orbit.Omega,
             "omega": orbit.omega,
             "tp": orbit.tp
-            })
+        })
     elif star.promo is not None:
         promo = star.promo
-        return jsonify({
+        return jsonify(
+        {
             "id": star.id,
             "data_type": "proper_motion",
             "x0": promo.x0,
@@ -171,7 +168,7 @@ def get_star(name):
             "ax0": promo.ax0,
             "ay0": promo.ay0,
             "t0": promo.t0
-            })
+        })
     else:
         return jsonify({"id": star.id})
 
@@ -182,7 +179,7 @@ def get_location(name, t):
     :param string name: name of the star
     :param float t: time of observation
 
-    :>json string id: unique id of the star 
+    :>json string id: unique id of the star
     :>json float t: time of observation
     :>json float x: x-position at t
     :>json float y: y-position at t
@@ -220,9 +217,10 @@ def get_location(name, t):
     try:
         particle = star.locate(t)
     except Exception as exc:
-        raise InvalidUsage("{0}".format(exc))
+        raise InvalidUsage(str(exc))
     else:
-        return jsonify({
+        return jsonify(
+        {
             "id": name,
             "t": t,
             "x": particle.x,
@@ -231,7 +229,7 @@ def get_location(name, t):
             "vx": particle.vx,
             "vy": particle.vy,
             "vz": particle.vz
-            })
+        })
 
 @app.route("/api/names/<string:name>")
 def get_name(name):
@@ -239,7 +237,7 @@ def get_name(name):
 
     :param string name: name of the star
 
-    :>json string id: unique id of the star 
+    :>json string id: unique id of the star
     :>json list names: alternative names for the star
 
     **Example**
@@ -270,7 +268,7 @@ def get_period(name):
 
     :param string name: name of the star
 
-    :>json string id: unique id of the star 
+    :>json string id: unique id of the star
     :>json float period: orbital period of the star
 
     **Example**
@@ -296,10 +294,9 @@ def get_period(name):
     try:
         period = star.period()
     except Exception as exc:
-        raise InvalidUsage("{0}".format(exc))
+        raise InvalidUsage(str(exc))
     else:
         return jsonify({"id": star.id, "period": period})
-
 
 @app.route("/api/distance/<string:name1>/<string:name2>/<float:t>")
 def get_distance(name1, name2, t):
@@ -322,13 +319,13 @@ def get_distance(name1, name2, t):
     .. sourcecode:: json
 
         {
-            "distance_onsky": 1.1967, 
+            "distance_onsky": 1.1967,
             "vector_onsky": [0.5005, 1.0870]
-        }    
+        }
 
-    :raises InvalidUsage: if either star is not found    
+    :raises InvalidUsage: if either star is not found
     :raises InvalidUsage: if either star can not be located
-    """    
+    """
     try:
         star1 = stars[name1]
         star2 = stars[name2]
@@ -338,14 +335,11 @@ def get_distance(name1, name2, t):
         particle1 = star1.locate(t)
         particle2 = star2.locate(t)
     except Exception as exc:
-        raise InvalidUsage("{0}".format(exc))
+        raise InvalidUsage(str(exc))
     else:
         dx = particle1.x-particle2.x
         dy = particle1.y-particle2.y
-        return jsonify({
-            "vector_onsky": [dx, dy],
-            "distance_onsky": np.sqrt(dx**2 + dy**2)
-            })
+        return jsonify({"vector_onsky": [dx, dy], "distance_onsky": np.sqrt(dx**2 + dy**2)})
 
 @app.route("/api/orbit_convert/", methods=["POST"])
 def orbit_convert():
@@ -377,7 +371,7 @@ def orbit_convert():
     :<json float z: z-position at t
     :<json float vx0: x-velocity at t
     :<json float vy0: y-velocity at t
-    :<json float vz0: z-velocity at t ("radial velocity")    
+    :<json float vz0: z-velocity at t ("radial velocity")
 
     :>json float a: semi-major axis
     :>json float e: eccentricity
@@ -390,7 +384,8 @@ def orbit_convert():
     if all([key in req for key in
             ("t", "a", "e", "inc", "Omega", "omega", "tp")]):
         particle = orbit_to_particle(Orbit(**req), black_hole, req["t"])
-        return jsonify({
+        return jsonify(
+        {
             "t": req["t"],
             "x": particle.x,
             "y": particle.y,
@@ -398,18 +393,19 @@ def orbit_convert():
             "vx": particle.vx,
             "vy": particle.vy,
             "vz": particle.vz
-            })
+        })
     elif all([key in req for key in
             ("t", "x", "y", "z", "vx", "vy", "vz")]):
         orbit = particle_to_orbit(Particle(**req), black_hole, req["t"])
-        return jsonify({
+        return jsonify(
+        {
             "a": orbit.a,
             "e": orbit.e,
             "inc": orbit.inc,
             "Omega": orbit.Omega,
             "omega": orbit.omega,
             "tp": orbit.tp
-            })
+        })
     else:
         raise InvalidUsage("Unable to perform the conversion.")
 
@@ -448,7 +444,7 @@ def unit_convert(value):
     .. sourcecode:: json
 
         {
-          "result": 0.04028801690020244, 
+          "result": 0.04028801690020244,
           "result_unit": "pc"
         }
 
@@ -463,37 +459,30 @@ def unit_convert(value):
     dst_units = ("rad", "deg", "au", "pc", "lyr", "rg", "km/s")
 
     if arg_src not in src_units:
-        raise InvalidUsage("Unit {0} is unspported.".format(arg_src))
+        raise InvalidUsage(f"Unit {arg_src} is unspported.")
     if arg_dst not in dst_units:
-        raise InvalidUsage("Unit {0} is unspported.".format(arg_dst))
+        raise InvalidUsage(f"Unit {arg_dst} is unspported.")
 
     # If necessary, convert angular to physical units using R0.
     if arg_src == "arcsec" and arg_dst in ("au", "pc", "lyr", "rg"):
-        src_unit = Unit(arg_src).to(units.rad)*(R0*R0_unit)
+        src_unit = Unit(arg_src).to(units.rad) * (R0 * R0_unit)
     elif arg_src == "arcsec/yr" and arg_dst in ("km/s"):
-        src_unit = Unit(arg_src).to(units.rad/units.yr) \
-          *(R0*R0_unit/units.yr)
+        src_unit = Unit(arg_src).to(units.rad / units.yr) * (R0 * R0_unit / units.yr)
     else:
         src_unit = Unit(arg_src)
 
     if arg_dst == "rg":
-        rg = 2*(M0*M0_unit)*constants.G/constants.c**2
+        rg = 2 * (M0 * M0_unit) * constants.G / constants.c**2
         try:
-            result = float((value*src_unit)/rg)
-            return jsonify({
-                "result": result,
-                "result_unit": "rg"
-                })
+            result = float((value * src_unit) / rg)
+            return jsonify({"result": result, "result_unit": "rg"})
         except Exception as exc:
-            raise InvalidUsage("{0}".format(exc))
+            raise InvalidUsage(str(exc))
 
     try:
         dst_unit = Unit(arg_dst)
         result = (value*src_unit).to(dst_unit)
     except Exception as exc:
-        raise InvalidUsage("{0}".format(exc))
+        raise InvalidUsage(str(exc))
     else:
-        return jsonify({
-            "result": result.value,
-            "result_unit": "{0}".format(result.unit)
-            })
+        return jsonify({"result": result.value, "result_unit": f"{result.unit}"})
