@@ -4,7 +4,7 @@ from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 
-from pyGC import app
+from stellar_api import app
 
 
 def run_server():
