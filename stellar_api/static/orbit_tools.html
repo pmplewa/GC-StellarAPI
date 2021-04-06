@@ -189,15 +189,15 @@
 <section id="orbit-tools">
 <h1>Orbit Tools<a class="headerlink" href="#orbit-tools" title="Permalink to this headline">¶</a></h1>
 <p>These tools are used on the server to provide the API functionality.</p>
-<span class="target" id="module-pyGC.orbit_tools"></span><dl class="py class">
-<dt id="pyGC.orbit_tools.Body">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">Body</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">promo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-stellar_api.orbit_tools"></span><dl class="py class">
+<dt id="stellar_api.orbit_tools.Body">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">Body</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">promo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.Body" title="Permalink to this definition">¶</a></dt>
 <dd><p>A body, typically a star, with an orbit or proper motion measurement.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>string</em>) – unique id of the body</p></li>
-<li><p><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
+<li><p><strong>primary</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
 <li><p><strong>m=0</strong> (<em>float</em>) – mass of the body</p></li>
 <li><p><strong>magnitude=None</strong> (<em>float</em>) – brightness magnitude</p></li>
 <li><p><strong>spec_type=None</strong> (<em>string</em>) – stellar spectral type</p></li>
@@ -205,16 +205,16 @@
 </dd>
 <dt class="field-even">Variables</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>orbit</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Orbit" title="pyGC.orbit_tools.Orbit"><em>Orbit</em></a>) – orbit (if at least a, e, inc, Omega, omega and tp in
+<li><p><strong>orbit</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Orbit" title="stellar_api.orbit_tools.Orbit"><em>Orbit</em></a>) – orbit (if at least a, e, inc, Omega, omega and tp in
 kwargs)</p></li>
-<li><p><strong>promo</strong> (<a class="reference internal" href="#pyGC.orbit_tools.ProperMotion" title="pyGC.orbit_tools.ProperMotion"><em>ProperMotion</em></a>) – proper motion (if at least x0, y0, vx0, vy0 and
+<li><p><strong>promo</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.ProperMotion" title="stellar_api.orbit_tools.ProperMotion"><em>ProperMotion</em></a>) – proper motion (if at least x0, y0, vx0, vy0 and
 t0 in kwargs)</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="pyGC.orbit_tools.Body.locate">
-<code class="sig-name descname"><span class="pre">locate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body.locate" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.Body.locate">
+<code class="sig-name descname"><span class="pre">locate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.Body.locate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the position and velocity of the body at a specific time,
 based on a a measurement of its orbit or its proper motion.</p>
 <dl class="field-list simple">
@@ -222,7 +222,7 @@ based on a a measurement of its orbit or its proper motion.</p>
 <dd class="field-odd"><p><strong>t</strong> (<em>float</em>) – time of observation</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle">Particle</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle">Particle</a></p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>Exception</strong> – if the body can not be located</p>
@@ -231,8 +231,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyGC.orbit_tools.Body.mean_motion">
-<code class="sig-name descname"><span class="pre">mean_motion</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body.mean_motion" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.Body.mean_motion">
+<code class="sig-name descname"><span class="pre">mean_motion</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.Body.mean_motion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean motion of the body’s orbit.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -245,8 +245,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyGC.orbit_tools.Body.period">
-<code class="sig-name descname"><span class="pre">period</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Body.period" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.Body.period">
+<code class="sig-name descname"><span class="pre">period</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.Body.period" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the orbital period of the body’s orbit.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -261,8 +261,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="pyGC.orbit_tools.Orbit">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">Orbit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Orbit" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.Orbit">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">Orbit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.Orbit" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Kepler orbit represented by its orbital elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -280,8 +280,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="pyGC.orbit_tools.Particle">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">Particle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.Particle" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.Particle">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">Particle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.Particle" title="Permalink to this definition">¶</a></dt>
 <dd><p>A particle with a (3D) position and velocity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -299,8 +299,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="pyGC.orbit_tools.ProperMotion">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">ProperMotion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vx0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vy0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ay0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.ProperMotion" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.ProperMotion">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">ProperMotion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vx0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vy0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ay0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.ProperMotion" title="Permalink to this definition">¶</a></dt>
 <dd><p>A proper motion up to second order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -318,8 +318,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.arccos2">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">arccos2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sign</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.arccos2" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.arccos2">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">arccos2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sign</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.arccos2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns arccos(x) choosing the correct quadrant.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -332,8 +332,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.eccentric_anomaly">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">eccentric_anomaly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.eccentric_anomaly" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.eccentric_anomaly">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">eccentric_anomaly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.eccentric_anomaly" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a mean anomaly into an eccentric anomaly.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -349,8 +349,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.mean_motion">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">mean_motion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.mean_motion" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.mean_motion">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">mean_motion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.mean_motion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean motion of a Kepler orbit.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -366,8 +366,8 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.mod2pi">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">mod2pi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.mod2pi" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.mod2pi">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">mod2pi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.mod2pi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrap an angle to the range [-pi, pi].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -380,45 +380,45 @@ based on a a measurement of its orbit or its proper motion.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.orbit_to_particle">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">orbit_to_particle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.orbit_to_particle" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.orbit_to_particle">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">orbit_to_particle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.orbit_to_particle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict the position an velocity of a body from its orbital elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>orbit</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Orbit" title="pyGC.orbit_tools.Orbit"><em>Orbit</em></a>) – orbit instance to convert</p></li>
-<li><p><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
+<li><p><strong>orbit</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Orbit" title="stellar_api.orbit_tools.Orbit"><em>Orbit</em></a>) – orbit instance to convert</p></li>
+<li><p><strong>primary</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
 <li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle">Particle</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle">Particle</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.particle_to_orbit">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">particle_to_orbit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">particle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.particle_to_orbit" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.particle_to_orbit">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">particle_to_orbit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">particle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.particle_to_orbit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the orbital elements corresponding to a set of positions
 and velocities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>particle</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) – particle instance to convert</p></li>
-<li><p><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
+<li><p><strong>particle</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle"><em>Particle</em></a>) – particle instance to convert</p></li>
+<li><p><strong>primary</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
 <li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyGC.orbit_tools.Orbit" title="pyGC.orbit_tools.Orbit">Orbit</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#stellar_api.orbit_tools.Orbit" title="stellar_api.orbit_tools.Orbit">Orbit</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.period">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">period</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.period" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.period">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">period</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.period" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the period of a Kepler orbit.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -434,26 +434,26 @@ and velocities.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.promo_to_particle">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">promo_to_particle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">promo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.promo_to_particle" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.promo_to_particle">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">promo_to_particle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">promo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.promo_to_particle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict the position and velocity of a body from its proper motion.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>promo</strong> (<a class="reference internal" href="#pyGC.orbit_tools.ProperMotion" title="pyGC.orbit_tools.ProperMotion"><em>ProperMotion</em></a>) – proper motion instance to convert</p></li>
-<li><p><strong>primary</strong> (<a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
+<li><p><strong>promo</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.ProperMotion" title="stellar_api.orbit_tools.ProperMotion"><em>ProperMotion</em></a>) – proper motion instance to convert</p></li>
+<li><p><strong>primary</strong> (<a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle"><em>Particle</em></a>) – reference particle</p></li>
 <li><p><strong>t</strong> (<em>float</em>) – time of observation</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyGC.orbit_tools.Particle" title="pyGC.orbit_tools.Particle">Particle</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#stellar_api.orbit_tools.Particle" title="stellar_api.orbit_tools.Particle">Particle</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pyGC.orbit_tools.true_anomaly">
-<code class="sig-prename descclassname"><span class="pre">pyGC.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">true_anomaly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGC.orbit_tools.true_anomaly" title="Permalink to this definition">¶</a></dt>
+<dt id="stellar_api.orbit_tools.true_anomaly">
+<code class="sig-prename descclassname"><span class="pre">stellar_api.orbit_tools.</span></code><code class="sig-name descname"><span class="pre">true_anomaly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stellar_api.orbit_tools.true_anomaly" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a mean anomaly into a true anomaly.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

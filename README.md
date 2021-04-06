@@ -28,3 +28,10 @@ python server.py
 ```
 http://localhost:5000/
 ```
+
+#### Documentation
+
+To build the documentation, switch to the package directory and run:
+```
+sphinx-build -b html doc static
+```

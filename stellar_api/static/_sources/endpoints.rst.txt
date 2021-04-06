@@ -1,7 +1,7 @@
 API Endpoints
 =============
 
-.. autoflask:: pyGC:app
+.. autoflask:: stellar_api:app
     :endpoints:
     :undoc-static:
     :order: path
