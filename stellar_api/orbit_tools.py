@@ -201,7 +201,7 @@ def eccentric_anomaly(e, M, *args, **kwargs):
         E0 = M if e < 0.8 else np.sign(M) * np.pi
         E = mod2pi(newton(f, E0, fp, *args, **kwargs))
     else:
-        f = lambda E: E - e * np.sinh(E)-M
+        f = lambda E: E - e * np.sinh(E) - M
         fp = lambda E: 1 - e * np.cosh(E)
         E0 = np.sign(M) * np.log(2 * np.fabs(M) / e + 1.8)
         E = newton(f, E0, fp, *args, **kwargs)
@@ -217,7 +217,7 @@ def true_anomaly(e, M):
     """
     E = eccentric_anomaly(e, M)
     if e > 1:
-        return 2 * np.arctan(np.sqrt((1 + e) / (e - 1)) * np.tanh(E/2))
+        return 2 * np.arctan(np.sqrt((1 + e) / (e - 1)) * np.tanh(E / 2))
     else:
         return 2 * np.arctan(np.sqrt((1 + e) / (1 - e)) * np.tan(E / 2))
 
@@ -279,8 +279,8 @@ def particle_to_orbit(particle, primary, t, tol=1e-8):
 
     tp = t - M / np.fabs(mean_motion(mu, a))
 
-    if (inc < tol) or (inc > np.pi-tol):
-        pomega = arccos2(ex/e, ey)
+    if (inc < tol) or (inc > np.pi - tol):
+        pomega = arccos2(ex / e, ey)
         if (inc < np.pi / 2):
             omega = pomega-Omega
         else:

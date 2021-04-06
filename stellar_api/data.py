@@ -1,5 +1,4 @@
 import json
-import os
 from pkg_resources import resource_filename
 
 from .orbit_tools import Particle, Body

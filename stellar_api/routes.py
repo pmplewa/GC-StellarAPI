@@ -28,7 +28,6 @@ class FloatConverter(NumberConverter):
 
 app.url_map.converters["float"] = FloatConverter
 
-
 @app.route("/")
 @app.route("/<path:path>")
 def index(path="index.html"):
